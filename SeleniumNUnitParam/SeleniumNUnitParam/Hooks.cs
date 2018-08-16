@@ -35,7 +35,7 @@ namespace SeleniumNUnitParam
         {
 			if (browserType == BrowerType.Chrome)
 			{
-				Driver = new ChromeDriver(@"C:\tools\chromedriver.exe");
+				Driver = new ChromeDriver(@"C:\tools");
 			}
 			else if (browserType == BrowerType.Firefox)
 			{
