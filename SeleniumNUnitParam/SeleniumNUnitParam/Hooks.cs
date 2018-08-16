@@ -38,7 +38,7 @@ namespace SeleniumNUnitParam
             else if (browserType == BrowerType.Firefox)
             {
                 FirefoxDriverService service = FirefoxDriverService.CreateDefaultService();
-                service.FirefoxBinaryPath = @"C:\Program Files (x86)\Mozilla Firefox\firefox.exe";
+				service.FirefoxBinaryPath = @"C:\Program Files\Mozilla Firefox\firefox.exe";
                 service.HideCommandPromptWindow = true;
                 service.SuppressInitialDiagnosticInformation = true;
                 Driver = new FirefoxDriver(service);
