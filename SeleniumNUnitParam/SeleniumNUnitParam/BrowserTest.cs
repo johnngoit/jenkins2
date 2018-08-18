@@ -18,7 +18,7 @@ namespace SeleniumNUnitParam
             //Driver.Navigate().GoToUrl("http://www.google.com");
             //Driver.FindElement(By.Name("q")).SendKeys("Selenium");
 
-			System.Threading.Thread.Sleep(10000);
+			System.Threading.Thread.Sleep(6000);
             Driver.FindElement(By.Name("btnG")).Click();
             Assert.That(Driver.PageSource.Contains("Selenium"), Is.EqualTo(true),
                                             "The text selenium doest not exist");
@@ -31,12 +31,12 @@ namespace SeleniumNUnitParam
 			//WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 			//IWebElement browseTab = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("17")));
 
-			System.Threading.Thread.Sleep(10000);
+			System.Threading.Thread.Sleep(5000);
 			Driver.Navigate().GoToUrl("http://executeautomation.com/demosite/Login.html");
             Driver.FindElement(By.Name("UserName")).SendKeys("admin");
             Driver.FindElement(By.Name("Password")).SendKeys("admin");
             Driver.FindElement(By.Name("Login")).Submit();
-            System.Threading.Thread.Sleep(2000);
+            System.Threading.Thread.Sleep(4000);
             Assert.That(Driver.PageSource.Contains("Selenium"), Is.EqualTo(true),
                                             "The text selenium doest not exist");
 
