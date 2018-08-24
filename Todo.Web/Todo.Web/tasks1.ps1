@@ -59,6 +59,7 @@ Task Test {
 				return
 			}
 			$xunitRunner = "$xunitPath\tools\xunit.console.exe"
+			Write-Host "xunitRunner $($xunitRunner); absoluteOutputDirectory $($absoluteOutputDirectory)"
 			exec { & $xunitRunner $absoluteOutputDirectory\$($_.Name)\$($_.Name).dll `
 					-xml "$absoluteOutputDirectory\xunit_$($_.Name).xml" `
 					-html "$absoluteOutputDirectory\xunit_$($_.Name).html" `
