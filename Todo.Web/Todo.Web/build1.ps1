@@ -14,7 +14,16 @@ if (Test-Path $nugetPath) {
 Write-Host 'Restore NuGet packages'
 NuGet restore
 
-. '.\functions1.ps1'
+#$env:GIT_SOLUTIONPATH = '..\..\TodoWeb\Todo.Web'
+#$env:GIT_SOLUTIONPATH = $null
+$needChangeDir = [String]::IsNullOrEmpty($env:GIT_SOLUTIONPATH)
 
-$invokeBuild = (Get-ChildItem('.\packages\Invoke-Build*\tools\Invoke-Build.ps1')).FullName | Sort-Object $_ | Select -Last 1
+if (!$needChangeDir) {
+	Write-Host "Change to Solution Directory '$env:GIT_SOLUTIONPATH'"
+	Set-Location "$env:GIT_SOLUTIONPATH"
+}
+
+. '.\functions.ps1'
+
+$invokeBuild = (Get-ChildItem(".\packages\Invoke-Build*\tools\Invoke-Build.ps1")).FullName | Sort-Object $_ | Select -Last 1
 & $invokeBuild $args Tasks1.ps1 
