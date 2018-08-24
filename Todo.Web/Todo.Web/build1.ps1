@@ -21,7 +21,7 @@ $needChangeDir = [String]::IsNullOrEmpty($env:GIT_SOLUTIONPATH)
 if (!$needChangeDir) {
 	Write-Host "Change to Solution Directory '$env:GIT_SOLUTIONPATH'"
 	Set-Location "$env:GIT_SOLUTIONPATH"
-}
+} 
 
 . '.\functions.ps1'
 
