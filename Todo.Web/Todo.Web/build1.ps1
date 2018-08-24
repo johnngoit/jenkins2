@@ -11,7 +11,7 @@ if (Test-Path $nugetPath) {
 	Set-Alias NuGet (Resolve-Path $nugetPath)
 }
 
-$env:GIT_SOLUTIONPATH = '..\..\TodoWeb\Todo.Web'
+#$env:GIT_SOLUTIONPATH = '..\..\TodoWeb\Todo.Web'
 #$env:GIT_SOLUTIONPATH = $null
 $needChangeDir = [String]::IsNullOrEmpty($env:GIT_SOLUTIONPATH)
 
