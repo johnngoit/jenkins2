@@ -11,10 +11,7 @@ if (Test-Path $nugetPath) {
 	Set-Alias NuGet (Resolve-Path $nugetPath)
 }
 
-Write-Host 'Restore NuGet packages'
-NuGet restore
-
-#$env:GIT_SOLUTIONPATH = '..\..\TodoWeb\Todo.Web'
+$env:GIT_SOLUTIONPATH = '..\..\TodoWeb\Todo.Web'
 #$env:GIT_SOLUTIONPATH = $null
 $needChangeDir = [String]::IsNullOrEmpty($env:GIT_SOLUTIONPATH)
 
@@ -22,6 +19,9 @@ if (!$needChangeDir) {
 	Write-Host "Change to Solution Directory '$env:GIT_SOLUTIONPATH'"
 	Set-Location "$env:GIT_SOLUTIONPATH"
 }
+
+Write-Host 'Restore NuGet packages'
+NuGet restore
 
 . '.\functions.ps1'
 
